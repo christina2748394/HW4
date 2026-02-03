@@ -1,10 +1,10 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class Locator : MonoBehaviour
 {
-    public static GameController Instance { get; private set; }
+    public static Locator Instance { get; private set; }
     public BirdController Bird { get; private set; }
     private void Awake()
     {
@@ -14,9 +14,7 @@ public class GameController : MonoBehaviour
             return;
         }
         Instance = this;
-
         GameObject playerObj = GameObject.FindWithTag("Player");
         Bird = playerObj.GetComponent<BirdController>();
     }
-
 }
